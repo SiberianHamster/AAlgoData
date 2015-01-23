@@ -1,6 +1,18 @@
 $(".clickme").click(function(){
-	console.log("clicked")
-	Checknizer() //check array for sortness
-	Randomnizer() //randon array
-	Sortnizer() //check sort
+  increaseNumbertoSort();
+  bogoSortThis();
 });
+
+function increaseNumbertoSort(){
+  var newNumbertoAdd = ($(".liList").length)+1;
+  $(".sortlist").append("<li class='liList'>" + newNumbertoAdd + "</li>");
+}
+
+function  bogoSortThis(){
+    // Randomnizer() random array
+   // Checknizer() check array for sortness}
+}
+
+
+
+

@@ -4,7 +4,7 @@ $(".clickme").click(function(){
 });
 
 function increaseNumbertoSort(){
-  var newNumbertoAdd = ($(".liList").length);
+  var newNumbertoAdd = ($(".liList").length)+1;
   $(".sortlist").append("<li class='liList'>" + newNumbertoAdd + "</li>");
   //add new chlid row to table
 }
@@ -17,7 +17,7 @@ for (i=maxLiCount; i>=0; i--){
         console.log("rand= " + rand);
 
         var rand = Math.floor(Math.random() * (i)+1);
-        $(".liList:eq("+i+")").after($(".liList:eq("+rand+")"))
+        $(".liList:nth-child("+i+")").after($(".liList:nth-child("+rand+")"));
 
 }
 

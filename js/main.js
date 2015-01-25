@@ -12,26 +12,23 @@ function increaseNumbertoSort(){
 function  bogoSortThis(){
   var itIsSorted = false;
   var howManyTimesTried = 0;
+  var maxLiCount = ($(".liList").length);
 
   while (itIsSorted == false) {
-    var maxLiCount = ($(".liList").length);
-    for (i=maxLiCount; i>=0; i--){
+    for (var i=maxLiCount; i>=0; i--){
       var rand = Math.floor(Math.random() * (i)+1);
       $(".liList:nth-child("+i+")").after($(".liList:nth-child("+rand+")"));
     }
 
     var i = 1;
-    if($(".liList:nth-child("+i+")").html() == i){
-      if (i<=maxLiCount){
+    while (i<=maxLiCount){
+      if (($(".liList:nth-child("+i+")").html() == i)){
         i++;
+        itIsSorted=true;
       }
-      else{itIsSorted=true
+      else{itIsSorted=false
       }
     }
-    else{
-      itIsSorted=false;
-    }
-
     howManyTimesTried++;
   }
 }

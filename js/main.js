@@ -15,21 +15,25 @@ function  bogoSortThis(){
 
   while (itIsSorted == false) {
     howManyTimesTried++;
-    console.log("how many times " +howManyTimesTried)
+    console.log("how many times " + howManyTimesTried)
+
     for (var i=maxLiCount; i>=0; i--){
       var rand = Math.floor(Math.random() * (i)+1);
       $(".liList:nth-child("+i+")").after($(".liList:nth-child("+rand+")"));
     } console.log("done randomizing")
 
     var i = 1;
+
     while (i<=maxLiCount){
+      console.log("i "+i);
+      console.log("maxLiCount "+maxLiCount);
       if (($(".liList:nth-child("+i+")").html() == i)){
         i++;
         itIsSorted=true;
         console.log("true")
       }
       else{itIsSorted=false
-        i++;
+        i=maxLiCount+1;
         console.log("false")
       }
     }

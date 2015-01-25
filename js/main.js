@@ -10,40 +10,28 @@ function increaseNumbertoSort(){
 }
 
 function  bogoSortThis(){
+  var itIsSorted = false;
+  var howManyTimesTried = 0;
 
-var maxLiCount = ($(".liList").length);
-for (i=maxLiCount; i>=0; i--){
-        console.log("i= " + i);
-        console.log("rand= " + rand);
+  while (itIsSorted == false) {
+    var maxLiCount = ($(".liList").length);
+    for (i=maxLiCount; i>=0; i--){
+      var rand = Math.floor(Math.random() * (i)+1);
+      $(".liList:nth-child("+i+")").after($(".liList:nth-child("+rand+")"));
+    }
 
-        var rand = Math.floor(Math.random() * (i)+1);
-        $(".liList:nth-child("+i+")").after($(".liList:nth-child("+rand+")"));
+    var i = 1;
+    if($(".liList:nth-child("+i+")").html() == i){
+      if (i<=maxLiCount){
+        i++;
+      }
+      else{itIsSorted=true
+      }
+    }
+    else{
+      itIsSorted=false;
+    }
 
+    howManyTimesTried++;
+  }
 }
-
-
-
-
-
-
-
-
-
-}
-
-
-
-
-
-        // eq that random to the end
-        // swap the end -1 to where random was
-        //decriment maxLiCount by 1
-
-    //loop the check while i < maxLiCount or i=li's i
-        // each,  eq of i of li = i until li = maxLiCount
-        // anytime if i>maxLiCount set done to true
-
-
-
-
-

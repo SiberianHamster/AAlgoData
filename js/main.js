@@ -6,7 +6,6 @@ $(".clickme").click(function(){
 function increaseNumbertoSort(){
   var newNumbertoAdd = ($(".liList").length)+1;
   $(".sortlist").append("<li class='liList'>" + newNumbertoAdd + "</li>");
-  //add new chlid row to table
 }
 
 function  bogoSortThis(){

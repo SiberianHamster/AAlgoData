@@ -1,5 +1,15 @@
+For this project of visualizing a data structure or algorithim, I chose to visulize the Bogosort.  The other requirement was to use the DOM to store data and use jquerry to manipulate the DOM.
 
+I am only partially sucessful at visualizing it.  My random generator goes by so quickly that the page gets locked up and doesn't display anything until it sucessfully sorted.  If you comment out line 17 and lines 23 - 34, in main.js (commenting out the loop that checks for sort and forces another randomnizing), you will be able to see that it does indeed sort the dom element li.
 
+I was unable to slow down the process by using the method to delay call a function as Brook did in his card deck demo.  Whenever i tried to convert the randomnizing section of code to a function and call it with the delay, I would get errors that :nth-child was undefined.  If I used the :eq on it instead, the li elements would not get randomized, making it always suceed on first try.
+
+For the DOM manipulation, if you do comment out the lines mentioned above, you will see the data that is stored in the DOM get manipulated.  You may have to click a few times as early on, the Bogosort....if very lucky, can hit it on the first try for the first few li elements.
+
+I would like to say that this entire project has been pretty much solo.  Two things come to mind though.  I like to thank Callum Song for suggesting i use the :nth-child dom traversal instead of the :eq.  This actually made the program work, i'm not sure why the :eq doesn't work here.
+
+Also, below are the websites i took pictures from to use:
 
 http://memegenerator.net
 http://knowyourmeme.com/memes/i-too-like-to-live-dangerously
+http://www.hwdyk.com/q/images/futurama_1_11_14.jpg

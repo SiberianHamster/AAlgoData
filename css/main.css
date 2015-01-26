@@ -1,3 +1,7 @@
+body{
+  background-color: Azure;
+}
+
 .title{
   font-size: 50px;
   font-family: Audiowide;
@@ -6,6 +10,12 @@
 .subtitle{
   margin-top: 3px;
   font-size: 25px;
+}
+
+.imageholder{
+  float: right;
+  clear: all;
+  height: 200px;
 }
 
 article > p {
@@ -31,6 +41,10 @@ li{
 
 .playbutton{
   margin-left: 800px
+}
+
+table{
+  margin-bottom: 15px;
 }
 
 .tablerow{

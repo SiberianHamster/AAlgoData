@@ -23,7 +23,6 @@
       }
 
       var i = 1;
-
       while (i<=maxLiCount){
         if (($(".liList:nth-child("+i+")").html() == i)){
           i++;
@@ -34,4 +33,5 @@
         }
       }
     }
+    $(".resulttable").append("<tr class='tablerow'><td>" + maxLiCount + howManyTimesTried + "</td></tr>");
   }

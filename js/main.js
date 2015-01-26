@@ -33,5 +33,5 @@
         }
       }
     }
-    $(".resulttable").append("<tr class='tablerow'><td>" + maxLiCount + howManyTimesTried + "</td></tr>");
+    $(".resulttable").append("<tr class='tablerow'><td>" + maxLiCount + "</td><td>"+ howManyTimesTried + "</td></tr>");
   }

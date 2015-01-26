@@ -6,19 +6,33 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Sorting the slow way</title>
+      <title>Sorting the Slow Way</title>
+      <link href="css/meyersreset.css" type="text/css" rel="stylesheet"/>
+      <link href="css/960_16_col.css" type="text/css" rel="stylesheet"/>
       <link href="css/main.css" type="text/css" rel="stylesheet"/>
-      <link href="css/meyersreset.css" type="text/css" rel="stylesheet" />
-      <link href="css/960_16_col.css" type="text/css" rel="stylesheet" />
+      <link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+
+
     </head>
-    <body>
-      <h1>Bogo Sort<h1>
-      <h2>Sorting that rocks</h2>
-      <a>Bogo sort....blah blah blah</a>
-      <button class="clickme">Go!</button>
-      <ul class="sortlist">
+    <body class="container_16">
+      <h1 class="grid_16 container_16 title ">Bogosort<h1>
+      <h2 class="grid_16 container_16 subtitle">Sorting that Rocks</h2>
+      <article class="grid_16 container_16 mainbody">
+        <p>Bogosort is a sorting algorithm.  It is not the fastest, in fact it can probably considered the slowest but it rocks becuase everytime you try the Bogosort, you may never get it sorted.</p>
+        <p>The algorithm for this sort starts with an array of elements. Check the array to see if it is sorted or not.  If not, randomize the entire array and check again.
+        </p>
+        <p>*****Bewarned that arrays greater than 6 may take a very long time*****</p>
+      </article>
+      <button class="clickme playbutton">Lets Sort!</button>
+      <ul class="sortlist outputcontainter grid_8 container_8">
       </ul>
       <table class="resulttable">
+        <tr>
+          <td>Number of Element
+          </td>
+          <td>Number of Tries
+          </td>
+        </tr>
       </table>
       <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
       <script type='text/javascript' src='js/main.js'></script>

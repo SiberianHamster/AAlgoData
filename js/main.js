@@ -16,11 +16,31 @@ $(function(){
     while (i<=(($(".liList").length))){
       if (($(".liList:nth-child("+i+")").html() == i)){
         i++;
+        if(i >= $(".liList").length){
+          console.log("Number of Tries " + howManyTimesTried)
 
+    // var x = currentListCount;
+    // var AverageScenario = 1;
+    // while(x>0){
+    //   AverageScenario = AverageScenario * x;
+    //   x--;
+    // }
+    // $(".resulttable").append("<tr class='tablerow'><td>" + currentListCount + "</td><td>" + howManyTimesTried + "</td><td>" + AverageScenario + "</td></tr>");
+    // if (howManyTimesTried==1){
+    //   $(".imageholder").replaceWith('<img class="imageholder" src="img/2.jpg">')
+    // }
+    // else {
+    //   $(".imageholder").replaceWith('<img class="imageholder" src="img/1.jpg">')
+    // }
+
+
+
+        }
       }
       else{
         isItSorted=false
         i=currentListCount + 1;
+        howManyTimesTried++;
         setTimeout(randomMe, 1000, i);
       }
     }
@@ -28,13 +48,9 @@ $(function(){
   }
 
   var randomMe = function (i){
-    howManyTimesTried++;
-    console.log("current array size " + i)
     var rand = Math.floor(Math.random() * (i) + 1);
-    console.log ("Random " + rand)
     $(".liList:nth-child(" + i + ")").after($(".liList:nth-child(" + rand + ")"));
     i--;
-    console.log("after decriment " + i)
     if (i) {
       setTimeout(randomMe, 0, i);
     }
@@ -59,6 +75,7 @@ $(function(){
   // }
 
   $(".clickme").click(function(){
+    howManyTimesTried = 0;
     increaseArrayForSorting();
     randomMe(currentListCount);
   })

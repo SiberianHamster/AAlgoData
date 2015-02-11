@@ -3,6 +3,7 @@ $(function(){
   var howManyTimesTried = 0;
   var currentListCount;
   var i = currentListCount;
+  var timeoutChoice = 500;
 
   function increaseArrayForSorting(){
     var nextNumberToAddToDOM = ($(".liList").length) + 1;
@@ -25,6 +26,7 @@ $(function(){
           }
 
           $(".resulttable").append("<tr class='tablerow'><td>" + $(".liList").length + "</td><td>" + howManyTimesTried + "</td><td>" + AverageScenario + "</td></tr>");
+          $(".clickme").fadeIn();
 
           if (howManyTimesTried==1){
             $(".imageholder").replaceWith('<img class="imageholder" src="img/2.jpg">')
@@ -34,12 +36,11 @@ $(function(){
            $(".imageholder").replaceWith('<img class="imageholder" src="img/1.jpg">')
           }
         }
-        $(".clickme").fadeIn();
       }
       else{
         i = $(".liList").length + 1;
         howManyTimesTried++;
-        setTimeout(randomMe, 1000, i);
+        setTimeout(randomMe, timeoutChoice, i);
       }
     }
   }
@@ -62,4 +63,8 @@ $(function(){
     increaseArrayForSorting();
     randomMe(currentListCount);
   })
+
+  $("#slowSpeed").click(function(){timeoutChoice = 1000});
+  $("#mediumSpeed").click(function(){timeoutChoice = 500});
+  $("#fastSpeed").click(function(){timeoutChoice = 0});
 });

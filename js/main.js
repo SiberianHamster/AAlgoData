@@ -1,43 +1,48 @@
 
   $(".clickme").click(function(){
-    increaseNumbertoSort();
+    increaseArrayForSorting();
     bogoSortThis();
   });
 
-  function increaseNumbertoSort(){
-    var newNumbertoAdd = ($(".liList").length)+1;
-    $(".sortlist").append("<li class='liList'>" + newNumbertoAdd + "</li>");
+  function increaseArrayForSorting(){
+    var nextNumberToAddToDOM = ($(".liList").length)+1;
+    $(".sortlist").append("<li class='liList'>" + nextNumberToAddToDOM + "</li>");
   }
 
   function  bogoSortThis(){
-    var itIsSorted = false;
+    var isItSorted = false;
     var howManyTimesTried = 0;
-    var maxLiCount = ($(".liList").length);
+    var currentListCount = ($(".liList").length);
 
-    while (itIsSorted == false) {
+    while (isItSorted == false) {
       howManyTimesTried++;
-      for (var i=maxLiCount; i>=0; i--){
+
+
+      for (var i=currentListCount; i>=0; i--){
         var rand = Math.floor(Math.random() * (i)+1);
         $(".liList:nth-child("+i+")").after($(".liList:nth-child("+rand+")"));
       }
+
+
       var i = 1;
-      while (i<=maxLiCount){
+      while (i<=currentListCount){
         if (($(".liList:nth-child("+i+")").html() == i)){
           i++;
-          itIsSorted=true;
+          isItSorted=true;
         }
         else{
-          itIsSorted=false
-          i=maxLiCount+1;
+          isItSorted=false
+          i=currentListCount+1;
         }
       }
     }
-    var x = maxLiCount;
+    var x = currentListCount;
     var AverageScenario = 1;
     while(x>0){
-      AverageScenario=AverageScenario*x;x--;
+      AverageScenario = AverageScenario * x;
+      x--;
     }
-    $(".resulttable").append("<tr class='tablerow'><td>" + maxLiCount + "</td><td>" + howManyTimesTried + "</td><td>" + AverageScenario + "</td></tr>");
+    $(".resulttable").append("<tr class='tablerow'><td>" + currentListCount + "</td><td>" + howManyTimesTried + "</td><td>" + AverageScenario + "</td></tr>");
     if (howManyTimesTried==1) {
       $(".imageholder").replaceWith('<img class="imageholder" src="img/2.jpg">')
     }

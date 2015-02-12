@@ -2,6 +2,8 @@ For this project of visualizing a data structure or algorithim, I chose to visul
 
 Some of the neat features of this program is that the array of random number is kept in the DOM. There are three speeds to choose from and it can be clicked on at anytime to change the speed.  The button to start fades out once it is hit and fades back in at the end.  This was designed so that a user can't click on it in the middle of a sort and cause issues.  Another way i could of dealt with this is to disable the button all together and renable it after.
 
+Another fun feature is switching pictures out.  It initially starts with the monkey from futurama with a hat on his rear.  If you suceed on getting the sort done on the first try, the picture will show the most interesting man in the world.  If you suceed, but it takes more than 1 try, then you will get Austin Powers picture.
+
 I would like to say that this entire project has been pretty much solo.  Two things come to mind though.  I like to thank Callum Song for suggesting i use the :nth-child dom traversal instead of the :eq.  This actually made the program work, i'm not sure why the :eq doesn't work here it might of been how I was using :eq.
 
 Also, below are the websites i took pictures from to use:

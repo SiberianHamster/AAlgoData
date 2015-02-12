@@ -40,17 +40,17 @@ $(function(){
       else{
         i = $(".liList").length + 1;
         howManyTimesTried++;
-        setTimeout(randomMe, timeoutChoice, i);
+        setTimeout(randomizeArray, timeoutChoice, i);
       }
     }
   }
 
-  var randomMe = function (i){
+  var randomizeArray = function (i){
     var rand = Math.floor(Math.random() * (i) + 1);
     $(".liList:nth-child(" + i + ")").after($(".liList:nth-child(" + rand + ")"));
     i--;
     if (i) {
-      setTimeout(randomMe, 0, i);
+      setTimeout(randomizeArray, 0, i);
     }
     else {
       checkMeForSortness()
@@ -61,7 +61,7 @@ $(function(){
     $(".clickme").fadeOut();
     howManyTimesTried = 1;
     increaseArrayForSorting();
-    randomMe(currentListCount);
+    randomizeArray(currentListCount);
   })
 
   $("#slowSpeed").click(function(){timeoutChoice = 1000});
